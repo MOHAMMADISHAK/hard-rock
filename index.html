@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hard Rock Solution - Song Lyric App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar  navbar-dark my-3">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Hard Rock Solution">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="images/toggler-icon.svg" alt="">
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="#">Action 1</a>
+                            <a class="dropdown-item" href="#">Action 2</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="content-area">
+            <div class="search-bar col-md-6 mx-auto">
+                <h1 class="text-center">Lyrics Search</h1>
+                <div class="search-box my-5">
+                    <input id="input-song" type="text" class="form-control" placeholder="Enter your artist song name">
+                    <button onclick='songSearchResult()' class="btn btn-success search-btn">Search</button>
+                </div>
+            </div>
+    
+            <!-- === Fancy results === -->
+            <div class="search-result col-md-8 mx-auto py-4" id="output">
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle1" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle1">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName1">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(0)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(0)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(0)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- ./ single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box0">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4" id="lyrics-title0">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics0"></pre>
+                    </div>                                                                                           
+                <!-- ./Single Lyrics -->
+
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box0">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration0"></pre>
+                    </div>  
+                <!-- Single Duration -->   
+
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle2" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle2">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName2" >Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(1)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(1)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(1)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- ./ single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box1">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title1">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics1"></pre>
+                    </div>                                                                                              
+                <!-- ./Single Lyrics -->
+
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box1">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration1"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle3" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle3">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName3">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(2)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(2)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(2)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- ./ single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box2">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title2">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics2"></pre>
+                    </div>                                                                                      
+                <!-- ./Single Lyrics -->
+
+                  <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box2">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration2"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle4" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle4">Washed Out</span></p>
+                        <p class="author lead">Album by: <span  id="artistName4">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(3)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(3)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(3)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box3">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title3">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics3"></pre>
+                    </div>                                                                                        
+                <!-- ./Single Lyrics -->
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box3">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration3"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle5" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle5">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName5">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(4)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(4)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(4)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box4">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title4">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics4"></pre>
+                    </div>                                                                                         
+                <!-- ./Single Lyrics -->
+
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box4">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration4"></pre>
+                    </div> 
+                    <!-- Single Duration -->
+
+                <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle6" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle6">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName6">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(5)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(5)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(5)">Get Lyrics</button>
+                    </div>
+                </div>
+                <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box5">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title5">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics5"></pre>
+                    </div>                                                                                                
+                <!-- ./Single Lyrics -->
+
+                 <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box5">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration5"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                 <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle7" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle7">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName7">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(6)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(6)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(6)">Get Lyrics</button>
+                    </div>
+                </div>
+                 <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box6">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title6">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics6"></pre>
+                    </div>                                                                                            
+                <!-- ./Single Lyrics -->
+
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box6">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration6"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                 <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle8" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle8">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName8">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(7)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(7)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(7)">Get Lyrics</button>
+                    </div>
+                </div>
+                 <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box7">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title7">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics7"></pre>
+                    </div>                                                                                        
+                <!-- ./Single Lyrics -->
+
+                 <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box7">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration7"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                 <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle9" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle9">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName9">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(8)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(8)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(8)">Get Lyrics</button>
+                    </div>
+                </div>
+                 <!-- single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box8">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title8">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics8"></pre>
+                    </div>                                                                                      
+                <!-- ./Single Lyrics -->
+
+                <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box8">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration8"></pre>
+                    </div> 
+                <!-- Single Duration -->
+
+                 <!-- single result -->
+                <div class="single-result row align-items-center my-3 p-3">
+                    <div class="col-md-9">
+                        <h3 id="songTitle10" class="lyrics-name">Purple Noon</h3>
+                        <p>Album: <span id="albumTitle10">Washed Out</span></p>
+                        <p class="author lead">Album by: <span id="artistName10">Washed Out</span></p>
+                        <button type="button" class="btn btn-outline-primary" onclick="songLink(9)">Preview</button>
+                        <button type="button" class="btn btn-outline-primary" onclick="duration(9)">Duration</button>
+                    </div>
+                    <div class="col-md-3 text-md-right text-center">
+                        <button class="btn btn-success" onclick="getLyrics(9)">Get Lyrics</button>
+                    </div>
+                </div>
+
+                <!-- ./ single result -->
+
+                <!-- Single Lyrics -->
+            
+                <div class="single-lyrics text-center" id="lyric-box9">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <h2 class="text-success mb-4"id="lyrics-title9">Pentatonix - Na Na Na</h2>
+                    <pre class="lyric text-white" id="lyrics9"></pre>
+                    </div>                                                                                         
+                <!-- ./Single Lyrics -->
+
+                 <!-- Single Duration -->
+                <div class="single-lyrics text-center" id="duration-box9">
+                    <button class="btn go-back">&lsaquo;</button>
+                    <p><b>Duration:</b></p>
+                    <pre class="lyric text-white" id="duration9"></pre>
+                </div> 
+                 <!-- Single Duration -->
+            </div>
+
+
+
+        </main>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Custom Script Here -->
+    <script>
+        let array;
+            
+            // search result of the selected song
+
+            function songSearchResult(){
+
+            const givenSong=document.getElementById('input-song').value;
+          
+            fetch('https://api.lyrics.ovh/suggest/'+givenSong)
+            .then(res=>res.json())
+            .then(songCriteria => { 
+                array=songCriteria.data;
+
+                console.log(songCriteria);
+
+                for(let i=0; i<10 ; i++){ 
+                   let songTitle='songTitle'+(i+1);
+                   let artistName='artistName'+(i+1);
+                   let albumTitle='albumTitle'+(i+1);
+                   document.getElementById(songTitle).innerText=songCriteria.data[i].title;
+                   document.getElementById(artistName).innerText=songCriteria.data[i].artist.name;
+                   document.getElementById(albumTitle).innerText=songCriteria.data[i].album.title;
+               }
+               document.getElementById('output').style.display='block';    
+            });
+            document.getElementsByClassName('single-lyrics').style.display='none';
+            }
+
+
+             // lyrics of the selected song
+
+            function getLyrics(songNum){
+          
+            let title=array[songNum].title;
+            let artist=array[songNum].artist.name;
+        
+            fetch('https://api.lyrics.ovh/v1/'+artist+'/'+title)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                
+                let lyricsTitleId='lyrics-title'+songNum;   
+                document.getElementById(lyricsTitleId).innerText=title;
+                let lyricBoxId='lyric-box'+songNum;
+                document.getElementById(lyricBoxId).style.display='block';
+                let lyricsId='lyrics'+songNum;    
+                
+                if(data.lyrics==undefined){
+                document.getElementById(lyricsId).innerText='Lyrics Not Found';
+                }
+                else{
+                document.getElementById(lyricsId).innerText=data.lyrics;
+                }    
+            });      
+        }
+
+       
+         // preview of the selected song
+         function songLink(songNum){
+            window.open(array[songNum].link);
+        }
+
+        // duration of the selected song
+
+        function duration(songNum){
+
+        let durationId='duration'+songNum; 
+        document.getElementById(durationId).innerText=((array[songNum].duration)/60).toFixed(2)+' minutes.';
+
+
+        let durationBoxId='duration-box'+songNum;
+        document.getElementById(durationBoxId).style.display='block';
+
+        }
+
+    </script>
+</body>
+</html>
